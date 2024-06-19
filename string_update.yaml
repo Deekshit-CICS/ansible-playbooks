@@ -1,0 +1,11 @@
+---
+- name: Update String in file
+  hosts: localhost
+  vars: 
+    status: Enable
+  tasks:
+    - name: Update Config File with Enable status
+      lineinfile: 
+        path: ~/setting.txt
+        regexp: '^SERVER='
+        line: 'SERVER={{ status }}'

@@ -1,0 +1,15 @@
+---
+- name: array example
+  hosts: localhost
+  vars:
+    students:
+      - Mark
+      - Deek
+      - Shane
+      - Ramu
+  tasks:
+    - name: say hello
+      debug:
+        msg: "Hello {{ students[2] }}"
+...
+

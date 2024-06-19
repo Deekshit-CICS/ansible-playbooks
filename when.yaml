@@ -1,0 +1,13 @@
+---
+- name: Condition Checker
+  hosts: webserver
+  vars:
+    server_type : "httpd"
+  tasks: 
+    - name: Print on specific hosts
+      debug:
+        msg: "Hurray Localhost"
+      when: server_type == "httpd"
+...
+    
+   

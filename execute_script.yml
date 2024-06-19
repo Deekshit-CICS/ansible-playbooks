@@ -1,0 +1,7 @@
+---
+- name: ansible playbook with file
+  hosts: localhost
+  tasks:
+    - name: Execute script
+      script: hello.sh
+...

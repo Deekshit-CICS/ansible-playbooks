@@ -1,0 +1,12 @@
+---
+- name: Variables Example
+  hosts: localhost
+
+  vars:
+    myname: Deek
+
+  tasks:
+    - name: Print Variable
+      debug:
+        msg: "Hello {{ myname }}"
+...       

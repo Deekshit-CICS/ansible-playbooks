@@ -1,0 +1,17 @@
+---
+- name: print "Hello, World" on localhost
+  hosts: webserver
+  gather_facts: false
+
+  tasks:
+    - name: Print message
+      debug:
+        msg: "Stopping Httpd server"
+    
+    - name: Stopping HTTPD server
+      service: 
+        name: httpd
+        state: stopped 
+      register: index
+
+    - debug: var=index    

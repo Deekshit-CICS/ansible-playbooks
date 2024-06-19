@@ -1,0 +1,22 @@
+---
+- name: Dictionary
+  hosts: localhost
+  vars:
+    students:
+      - Deek:
+          city: Hyderbad
+          address: 1-7-1046
+      - Sita:
+          city: Hyderabad
+          address: 1-7-1047
+  tasks:
+    - name: Display Students Data
+      debug:
+        msg: "{{ students }}"
+
+- name: Second Task
+  hosts: localhost
+  tasks:
+    - name: Executing another play
+      debug:
+        msg: Second Task

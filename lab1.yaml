@@ -1,0 +1,13 @@
+---
+- name: Execute shell command on managed nodes
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Run shell command
+      ansible.builtin.shell: python3 hello.py
+      register: shell_output
+
+    - name: Display shell command output
+      debug:
+        var: shell_output.stdout

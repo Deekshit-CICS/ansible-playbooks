@@ -1,0 +1,10 @@
+---
+- name: ping ec2
+  hosts: Jenkins
+  tasks:
+    - name: ping
+      ping:
+      register: output
+    - debug:
+        msg: output
+

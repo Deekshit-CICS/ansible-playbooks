@@ -1,0 +1,19 @@
+---
+- name: Install Jenkins in RHEL 
+  hosts: jenkins
+  tasks:
+    - name: Install Jekins Packages
+      yum: 
+        name: jenkins
+        state: present
+
+    - name: Start Jenkins Service
+      service:
+        name: jenkins
+        state: started
+
+    - name: Send HTTP GET request to Jenkins
+      uri:
+        url: "http://
+      
+

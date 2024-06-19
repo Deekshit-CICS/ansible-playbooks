@@ -1,0 +1,15 @@
+---
+- name: print "Hello, World" on localhost
+  hosts: webserver
+  gather_facts: false
+
+  tasks:
+    - name: Print message
+      debug:
+        msg: "Hello, AWS"
+    
+    - name: Display index.html from httpd
+      ansible.builtin.shell: sudo rm /var/www/html/index2.html; sudo rm /var/www/html/index3.html; sudo rm /var/www/html/index4.html
+      register: index
+
+    - debug: var=index
